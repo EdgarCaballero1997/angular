@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from 'src/models/user';
 
 @Component({
   selector: 'app-profile',
@@ -7,6 +8,17 @@ import { Component } from '@angular/core';
 })
 
 export class ProfileComponent {
-  llamarInputs(email: string, url: string, nombre: string, apellido: string){
+  emailInput: string = "";
+  urlInput: string = "";
+  nameInput: string = "";
+  surnameInput: string = "";
+  user: User[] = [];
+  enviarInputs(){
+    let user1 = new User(this.nameInput, this.surnameInput, this.emailInput, this.urlInput);
+    this.user.push(user1);
+    console.log(this.nameInput);
+    
   }
 }
+
+//LO SIENTO MUCHO, NO ENCUENTRO LA FORMA DE RESOLVER EL EJERCICIO SIN USAR LA DIRECTIVA "ngFor"
