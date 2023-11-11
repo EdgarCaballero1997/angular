@@ -15,9 +15,9 @@ export class ProfileComponent {
   user: User[] = [];
   enviarInputs(){
     let user1 = new User(this.nameInput, this.surnameInput, this.emailInput, this.urlInput);
+    this.user = [];
     this.user.push(user1);
     console.log(this.nameInput);
-    
   }
 }
 
