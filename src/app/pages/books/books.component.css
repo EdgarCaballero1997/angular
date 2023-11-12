@@ -2,21 +2,22 @@
     background-image: url(../../../assets/img/-methode-times-prod-web-bin-02fedb4c-9c05-11ed-8201-2ed91f44d1e8.jpg);
     width: 100vw;
     height: auto;
+    border: 2px solid black;
     padding: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-    .cont-around{
+    /* .cont-around{
         width: 90%;
         height: auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: flex-start;
-    }
-        .card-1{
+    } */
+        /* .card-1{
             width: 18rem;
             height: 37%;
             background-color: rgba(255, 255, 255, 0.55);
@@ -25,8 +26,8 @@
             border-radius: 7px;
             display: flex;
             flex-direction: column;
-        }
-            .card-1.par:hover{
+        } */
+            /* .card-1.par:hover{
                 width: 18rem;
                 height: 37%;
                 box-shadow: 0 4px 8px rgba(243, 10, 255, 0.774);
@@ -45,8 +46,8 @@
                 border-radius: 7px;
                 display: flex;
                 flex-direction: column;
-            }
-                .contenedor-img{
+            } */
+                /* .contenedor-img{
                     width: 100%;
                     height: 70%;
                     display: flex;
@@ -73,7 +74,7 @@
             .mensaje{
                 color: white;
                 font-size: xx-large;
-            }
+            } */
     .container{
         width: 60%;
         height: 60%;
