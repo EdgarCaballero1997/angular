@@ -1,0 +1,51 @@
+<div class="contenedor-general">
+    <div class="cont-around">
+        <ng-container *ngIf="books.length > 0; else mostrarMensaje">
+            <div *ngFor="let book of books; let even = even, let i = index" class="card-1" [ngClass]="{'par': even, 'impar': !even}" type="submit">
+                <div class="contenedor-img">
+                    <img src="{{book.photo}}" class="image-card" alt="book">
+                </div>
+                <div class="card-body">
+                <h5 class="card-title"> {{book.title}} </h5>
+                <p class="card-text">
+                    ID Lector: {{book.id_user}}<br>
+                    ID Libro: {{book.id_book | referencia}}<br>
+                    Genero: {{book.type}}<br>
+                    Autor/a: {{book.author}}<br>
+                    Precio: {{book.price | moneda}}<br>
+                </p>
+                <button class="btn btn-danger" (click)="eliminarLibro(i)">Eliminar</button>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #mostrarMensaje class="cont-mensaje">
+            <div class="mensaje">
+                <p>La librería está vacía</p>
+            </div>
+        </ng-template>
+    </div>
+    <div class="container">
+        <div class="col">
+            <div class="row">
+                <form action="" method="" class="formulario">
+                    <label>Titulo del libro</label><br>
+                    <input type="text" class="input form-control" name="titulo" placeholder="Introduce el título:" [(ngModel)]="titulo"><br>
+                    <label>Género del libro:</label><br>
+                    <input type="text" class="input form-control" name="genero" placeholder="Introduce el género:" [(ngModel)]="genero"><br>
+                    <label>Autor del libro:</label><br>
+                    <input type="text" class="input form-control" name="autor" placeholder="Introduce el/la autor/a:" [(ngModel)]="autor"><br>
+                    <label>Precio del libro:</label><br>
+                    <input type="text" class="input form-control" name="precio" placeholder="Introduce el precio del libro:" [(ngModel)]="precio"><br>
+                    <label>Portada del libro</label><br>
+                    <input type="text" class="input form-control" name="portada" placeholder="Click aquí para seleccionar una ruta" [(ngModel)]="foto" (click)="alert()"><br>
+                    <label>ID del libro:</label><br>
+                    <input type="text" class="input form-control" name="id-libro" placeholder="Introduce el ID del libro:" [(ngModel)]="id_book"><br>
+                    <label>ID del usuario:</label><br>
+                    <input type="text" class="input form-control" name="id-user" placeholder="Introduce el ID de usuario:" [(ngModel)]="id_user"><br>
+                </form>
+                <br>
+                <button class="boton btn btn-primary" (click)="captarInfo()">Añadir libro</button>
+            </div>
+        </div>
+    </div>
+</div>
