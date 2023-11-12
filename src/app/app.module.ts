@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { BooksComponent } from './pages/books/books.component';
 import { ReferenciaPipe } from './pipe/referencia.pipe';
 import { MonedaPipe } from './pipe/moneda.pipe';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MonedaPipe } from './pipe/moneda.pipe';
     BooksComponent,
     ReferenciaPipe,
     MonedaPipe,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
