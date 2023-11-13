@@ -1,5 +1,5 @@
 <div class="contenedor-general">
-    <app-card [librosPadre]="libros" (eliminarLibroEvent)="eliminarLibro($event)"></app-card>
+<!-- <app-card [librosPadre]="libros" (eliminarLibroEvent)="eliminarLibro($event)"></app-card> -->
     <div class="container">
         <div class="col">
             <div class="row">
@@ -20,7 +20,7 @@
                     <input type="text" class="input form-control" name="id-user" placeholder="Introduce el ID de usuario:" [(ngModel)]="id_user"><br>
                 </form>
                 <br>
-                <button class="boton btn btn-primary" (click)="captarInfo()">Añadir libro</button>
+                <button class="boton btn btn-primary" (click)="infoInputs()">Añadir libro</button>
                 <button class="boton btn btn-primary" (click)="borrarLocalStorage()">Borrar localStorage (leer comentario en template antes de pulsar)</button>
                 <!-- El boton "Borrar localStorage" lo introduje para que, al eliminar un libro introducido a través del constructor del controlador books, puedas reestablecer la generación de dichos
                 libros al refrescar la página. Ejemplo: Eliminas el libro "Biblia" y refrescas la página, dicho libro NO reaparece. Para que reaparezca has de clicar el botón "Borrar localStoreage" y

@@ -1,14 +1,18 @@
 .contenedor-general{
     background-image: url(../../../assets/img/-methode-times-prod-web-bin-02fedb4c-9c05-11ed-8201-2ed91f44d1e8.jpg);
     width: 100vw;
+<<<<<<< HEAD
     height: auto;
     border: 2px solid black;
+=======
+>>>>>>> dia5
     padding: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+<<<<<<< HEAD
     /* .cont-around{
         width: 90%;
         height: auto;
@@ -75,6 +79,8 @@
                 color: white;
                 font-size: xx-large;
             } */
+=======
+>>>>>>> dia5
     .container{
         width: 60%;
         height: 60%;

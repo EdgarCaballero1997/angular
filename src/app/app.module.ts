@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { BooksComponent } from './pages/books/books.component';
 import { ReferenciaPipe } from './pipe/referencia.pipe';
 import { MonedaPipe } from './pipe/moneda.pipe';
-import { CardComponent } from './card/card.component';
+import { CardComponent } from './pages/card/card.component';
 
 @NgModule({
   declarations: [
