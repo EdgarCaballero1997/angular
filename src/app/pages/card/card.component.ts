@@ -1,28 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Book } from 'src/models/book';
+import { Component } from '@angular/core';
 import { CanalCardBookService } from 'src/app/shared/canal-card-book.service';
+import { Book } from 'src/models/book';
 
 @Component({
-  selector: 'app-books',
-  templateUrl: './books.component.html',
-  styleUrls: ['./books.component.css']
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.css']
 })
-export class BooksComponent {
-  id_book: string = "";
-  number_idBook: number = +this.id_book;
-  id_user: string = "";
-  number_idUser: number = +this.id_user;
-  titulo: string = "";
-  genero: string = "";
-  autor: string = "";
-  precio: string = "";
-  numberPrecio: number = +this.precio;
-  foto: string = "";
+export class CardComponent {
   constructor(public cardBookService: CanalCardBookService){
-  }
-  infoInputs(){
-    this.cardBookService.book = new Book(this.id_book, this.id_user, this.titulo, this.genero, this.autor, this.precio, this.foto);
-    alert("¡Libro añadido!");
   }
   // id_book: string = "";
   // numero1: number = +this.id_book;    //Transformo los números string en tipo number. Hago esto porque de lo contrario he de inicializar
@@ -45,10 +31,15 @@ export class BooksComponent {
   //     new Book("00006", "06", "Bilbia", "Religión", "Desconocido", "5.99", "../../../assets/img/biblia.jpg")
   //   ];
   // }
-  alert(){
-    alert("Copia y pega una de estas rutas:\n../../../assets/img/pasionIndia.jpg\n../../../assets/img/juanramonrallo.jpeg\n../../../assets/img/kenfollet.jpg\n");
+
+  ngOnInit(){
+    const storedBooks = localStorage.getItem('librosPorDefecto');
+    if(storedBooks) {
+      this.librosPorDefecto = JSON.parse(storedBooks);
+    }
   }
-  borrarLocalStorage() {
-    localStorage.removeItem('librosPorDefecto');
+  eliminarLibro(index: number){
+    this.librosPorDefecto.splice(index, 1);
+    localStorage.setItem('librosPorDefecto', JSON.stringify(this.librosPorDefecto));
   }
 }

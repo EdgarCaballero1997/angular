@@ -1,24 +1,31 @@
-.contenedor-general{
-    background-image: url(../../assets/img/-methode-times-prod-web-bin-02fedb4c-9c05-11ed-8201-2ed91f44d1e8.jpg);
+p{
+    font-weight: 600;
+}
+h5{
+    font-weight: 600;
+}
+.container-general-card{
     width: 100vw;
     height: auto;
-    padding: 100px;
+    border: 2px solid black;
+    background-image: url(../../../assets/img/fondo-cards.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
     .cont-around{
         width: 90%;
         height: auto;
+        border: 2px solid black;
+        padding: 100px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: flex-start;
     }
         .card-1{
             width: 18rem;
             height: 37%;
+            border: 2px solid black;
             background-color: rgba(255, 255, 255, 0.55);
             padding: 10px;
             margin: 10px;
@@ -27,22 +34,12 @@
             flex-direction: column;
         }
             .card-1.par:hover{
-                width: 18rem;
-                height: 37%;
                 box-shadow: 0 4px 8px rgba(243, 10, 255, 0.774);
-                padding: 10px;
-                margin: 10px;
-                border-radius: 7px;
                 display: flex;
                 flex-direction: column;
             }
-            .card-1.impar:hover{
-                width: 18rem;
-                height: 37%;
+            .card-1.impar:active{
                 box-shadow: 0 4px 8px rgba(10, 255, 251, 0.774);
-                padding: 10px;
-                margin: 10px;
-                border-radius: 7px;
                 display: flex;
                 flex-direction: column;
             }
@@ -69,7 +66,7 @@
             .boton-x:hover{
                 background-color: rgb(224, 224, 224);
             }
-            .boton-x:hover{
+            .boton-x:active{
                 background-color: none;
             }
                 .card-body{
@@ -88,18 +85,3 @@
                 color: white;
                 font-size: xx-large;
             }
-    .container{
-        width: 60%;
-        height: 60%;
-        border-radius: 10px;
-        background-color: rgba(255, 255, 255, 0.4);
-        padding: 50px;
-        margin: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-        .boton{
-            width: 100%;
-            margin: 5px;
-        }
