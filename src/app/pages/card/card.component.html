@@ -1,20 +1,26 @@
 <div class="container-general-card">
-    <div class="cont-around" >
-        <ng-container *ngIf="librosPorDefecto.length > 0; else mostrarMensaje" >
-            <div *ngFor="let librosAtributos of librosPorDefecto; let even = even, let i = index" class="card-1" [ngClass]="{'par': even, 'impar': !even}" type="submit">
-                <button class="boton-x btn btn-white" (click)="eliminarLibro(i)">X</button>
-                <div class="contenedor-img">
-                    <img src="{{cardBookService.book.photo}}" class="image-card" alt="book">
-                </div>
-                <div class="card-body">
-                <h5 class="card-title"> {{cardBookService.book.title}} </h5>
-                <p class="card-text">
-                    ID Lector: {{cardBookService.book.id_user | referencia}}<br>
-                    ID Libro: {{cardBookService.book.id_book | referencia}}<br>
-                    Genero: {{cardBookService.book.type}}<br>
-                    Autor/a: {{cardBookService.book.author}}<br>
-                    Precio: {{cardBookService.book.price | moneda}}<br>
-                </p>
+    <div class="cont-around cont-search">
+        <form class="d-flex mb-3">
+            <input type="text" class="form-control mr-2" id="searchInput" placeholder="Ingrese el nombre del libro" [(ngModel)]="id_book">
+            <button class="btn btn-primary" (click)="getOne()">Buscar</button>
+        </form>
+        <ng-container *ngIf="librosPorDefecto && librosPorDefecto.length > 0; else mostrarMensaje">
+            <div class="cont-cards">
+                <div *ngFor="let librosAtributos of librosPorDefecto; let even = even, let i = index" class="card-1" [ngClass]="{'par': even, 'impar': !even}" type="submit">
+                    <button class="boton-x btn btn-white" (click)="eliminarLibro(i)">X</button>
+                    <div class="contenedor-img">
+                        <img src="{{librosAtributos.photo}}" class="image-card" alt="book">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"> {{librosAtributos.title}} </h5>
+                        <p class="card-text">
+                            ID Lector: {{librosAtributos.id_user | referencia}}<br>
+                            ID Libro: {{librosAtributos.id_book | referencia}}<br>
+                            Genero: {{librosAtributos.type}}<br>
+                            Autor/a: {{librosAtributos.author}}<br>
+                            Precio: {{librosAtributos.price | moneda}}<br>
+                        </p>
+                    </div>
                 </div>
             </div>
         </ng-container>

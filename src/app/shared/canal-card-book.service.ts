@@ -5,6 +5,7 @@ import { Book } from 'src/models/book';
   providedIn: 'root'
 })
 export class CanalCardBookService {
-  public book: Book;
-  constructor() { }
+  public libro: Book;
+  constructor(){
+  }
 }

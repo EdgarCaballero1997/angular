@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CanalCardBookService } from 'src/app/shared/canal-card-book.service';
 import { Book } from 'src/models/book';
+import { BooksService } from 'src/app/shared/books.service';
 
 @Component({
   selector: 'app-card',
@@ -8,30 +9,29 @@ import { Book } from 'src/models/book';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  constructor(public cardBookService: CanalCardBookService){
+  id_book: string = "";
+  librosPorDefecto: Book[] = [];
+  constructor(public cardBookService: CanalCardBookService, private booksService: BooksService) {
+    this.librosPorDefecto = [
+    ];
+    this.loadBooks();
   }
-  // id_book: string = "";
-  // numero1: number = +this.id_book;    //Transformo los números string en tipo number. Hago esto porque de lo contrario he de inicializar
-  // id_user: string = "";               //el valor de los parámetros tipo number en 0, y por lo tanto en los formularios aparece el número 0
-  // numero2: number = +this.id_user;    //impidiendo que se visualice el placeholder.
-  // titulo: string = "";
-  // genero: string = "";
-  // autor: string = "";
-  // precio: string = "";
-  // numero3: number = +this.precio;
-  // foto: string = "";
-  // libros: Book[] = [];
-  // constructor() {
-  //   this.libros = [
-  //     new Book("00001", "01", "Harry Potter", "Fantasía", "J. K. Rowling", "14.90", "../../../assets/img/ede09e2aaf5130972273563930926ce3.jpg.webp"),
-  //     new Book("00002", "02", "El Señor de los Anillos", "Aventura", "J. R. R. Tolkien", "20", "../../../assets/img/portada_el-senor-de-los-anillos-n-0303-el-retorno-del-rey-ne_j-r-r-tolkien_202210071217.webp"),
-  //     new Book("00003", "03", "Los Juegos del Hambre", "Acción", "Suzane Collins", "9.99", "../../../assets/img/Juegos.png"),
-  //     new Book("00004", "04", "Pinocho", "Fantasía", "Carlo Collodi", "4.99", "../../../assets/img/pinocho.jpg"),
-  //     new Book("00005", "05", "Assassin's Creed", "Aventura", "Ubisoft Productions", "12.50", "../../../assets/img/acu.avif"),
-  //     new Book("00006", "06", "Bilbia", "Religión", "Desconocido", "5.99", "../../../assets/img/biblia.jpg")
-  //   ];
-  // }
-
+  private loadBooks() {
+    const storedBooks = localStorage.getItem('librosPorDefecto');
+    this.librosPorDefecto = storedBooks ? JSON.parse(storedBooks) : [];
+  }
+  buscarLibro() {
+    if (this.id_book) {
+      const foundBook = this.booksService.getOne(this.id_book);
+      if (foundBook) {
+        this.librosPorDefecto = [foundBook];
+      } else {
+        alert('Libro no encontrado');
+      }
+    } else {
+      this.loadBooks();
+    }
+  }
   ngOnInit(){
     const storedBooks = localStorage.getItem('librosPorDefecto');
     if(storedBooks) {

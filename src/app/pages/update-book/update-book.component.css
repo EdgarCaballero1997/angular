@@ -1,0 +1,30 @@
+h1{
+    font-weight: 600;
+    margin: 10px;
+}
+.contenedor-general{
+    width: 100vw;
+    height: 100vw;
+    border: 2px solid rgb(0, 0, 0);
+    background-image: url(../../../assets/img/burbujas.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .cont-formulario{
+        width: 40%;
+        height: 60%;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+        .cont-titulo{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }

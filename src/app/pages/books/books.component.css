@@ -1,17 +1,36 @@
+h1{
+    font-weight: 600;
+    margin: 10px;
+}
 .contenedor-general{
-    background-image: url(../../../assets/img/-methode-times-prod-web-bin-02fedb4c-9c05-11ed-8201-2ed91f44d1e8.jpg);
     width: 100vw;
+<<<<<<< HEAD
 <<<<<<< HEAD
     height: auto;
     border: 2px solid black;
 =======
 >>>>>>> dia5
     padding: 100px;
+=======
+    height: 100vw;
+    background-image: url(../../../assets/img/-methode-times-prod-web-bin-02fedb4c-9c05-11ed-8201-2ed91f44d1e8.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-formulario{
+    width: 40%;
+    height: 65%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.8);
+>>>>>>> dia5
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
     /* .cont-around{
         width: 90%;
@@ -88,11 +107,18 @@
         background-color: rgba(255, 255, 255, 0.4);
         padding: 50px;
         margin: 20px;
+=======
+    .cont-titulo{
+        width: 90%;
+>>>>>>> dia5
         display: flex;
         justify-content: center;
-        align-items: center;
+        margin: 20px;
     }
-        .boton{
-            width: 100%;
-            margin: 5px;
-        }
+    .cont-boton{
+        height: 12%;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }

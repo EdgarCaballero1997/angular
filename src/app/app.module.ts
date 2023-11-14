@@ -15,6 +15,8 @@ import { BooksComponent } from './pages/books/books.component';
 import { ReferenciaPipe } from './pipe/referencia.pipe';
 import { MonedaPipe } from './pipe/moneda.pipe';
 import { CardComponent } from './pages/card/card.component';
+import { UpdateBookComponent } from './pages/update-book/update-book.component';
+import { BooksService } from './shared/books.service';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,14 @@ import { CardComponent } from './pages/card/card.component';
     ReferenciaPipe,
     MonedaPipe,
     CardComponent,
+    UpdateBookComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [BooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

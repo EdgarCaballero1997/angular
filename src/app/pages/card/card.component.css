@@ -12,8 +12,7 @@ h5{
 >>>>>>> dia5:src/app/pages/card/card.component.css
     width: 100vw;
     height: auto;
-    border: 2px solid black;
-    background-image: url(../../../assets/img/fondo-cards.jpg);
+    background-image: url(../../../assets/img/faro-aventura.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +40,6 @@ h5{
     .cont-around{
         width: 90%;
         height: auto;
-        border: 2px solid black;
         padding: 100px;
         display: flex;
         flex-wrap: wrap;
@@ -50,11 +48,15 @@ h5{
     }
         .card-1.par:hover{
             width: 18rem;
+<<<<<<< HEAD
             height: 37%;
 <<<<<<< HEAD:src/app/card/card.component.css
             box-shadow: 0 4px 8px rgba(243, 10, 255, 0.774);
 =======
             border: 2px solid black;
+=======
+            height:45%;
+>>>>>>> dia5
             background-color: rgba(255, 255, 255, 0.55);
 >>>>>>> dia5:src/app/pages/card/card.component.css
             padding: 10px;
@@ -77,7 +79,7 @@ h5{
                 display: flex;
                 flex-direction: column;
             }
-            .card-1.impar:active{
+            .card-1.impar:hover{
                 box-shadow: 0 4px 8px rgba(10, 255, 251, 0.774);
                 display: flex;
                 flex-direction: column;
@@ -101,6 +103,7 @@ h5{
                 margin: 5px;
                 justify-content: flex-end;
                 justify-content: center;
+                align-items: center;
             }
             .boton-x:hover{
                 background-color: rgb(224, 224, 224);
@@ -184,4 +187,20 @@ h5{
                 color: white;
                 font-size: xx-large;
             }
+<<<<<<< HEAD
 >>>>>>> dia5:src/app/pages/card/card.component.css
+=======
+        .cont-search{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            .cont-cards{
+                width: 100%;
+                hyphens: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+            }
+>>>>>>> dia5
