@@ -1,0 +1,15 @@
+.fondo-pantalla{
+    width: 100vw;
+    height: 100vw;
+    background-image: url(../../../assets/img/leon-seibert-5VJTA1CRCUg-unsplash.jpg.webp);
+}
+.centrar-info{
+    display: flex;
+    justify-content: center;
+}
+.boton{
+    width: 100%;
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+}
