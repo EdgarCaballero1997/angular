@@ -9,7 +9,6 @@ import { BooksService } from 'src/app/shared/books.service';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  showAllBooks: boolean = true;
   id_book: string = "";
   librosPorDefecto: Book[] = [];
   constructor(public cardBookService: CanalCardBookService, private booksService: BooksService) {
