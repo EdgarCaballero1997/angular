@@ -2,7 +2,7 @@
     <div class="cont-around cont-search">
         <form class="d-flex mb-3">
             <input type="text" class="form-control mr-2" id="searchInput" placeholder="Ingrese el nombre del libro" [(ngModel)]="id_book">
-            <button class="btn btn-primary" (click)="getOne()">Buscar</button>
+            <button class="btn btn-primary" (click)="buscarLibro()">Buscar</button>
         </form>
         <ng-container *ngIf="librosPorDefecto && librosPorDefecto.length > 0; else mostrarMensaje">
             <div class="cont-cards">

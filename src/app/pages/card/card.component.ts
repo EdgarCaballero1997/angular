@@ -9,15 +9,15 @@ import { BooksService } from 'src/app/shared/books.service';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
+  showAllBooks: boolean = true;
   id_book: string = "";
   librosPorDefecto: Book[] = [];
   constructor(public cardBookService: CanalCardBookService, private booksService: BooksService) {
-    this.librosPorDefecto = [
-    ];
+    this.librosPorDefecto = [];
     this.loadBooks();
   }
   private loadBooks() {
-    const storedBooks = localStorage.getItem('librosPorDefecto');
+    let storedBooks = localStorage.getItem('librosPorDefecto');
     this.librosPorDefecto = storedBooks ? JSON.parse(storedBooks) : [];
   }
   buscarLibro() {
