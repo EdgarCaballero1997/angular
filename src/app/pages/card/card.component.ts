@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { CanalCardBookService } from 'src/app/shared/canal-card-book.service';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Book } from 'src/models/book';
 import { BooksService } from 'src/app/shared/books.service';
 
@@ -8,37 +7,31 @@ import { BooksService } from 'src/app/shared/books.service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent {
+export class CardComponent implements OnInit {  // Implementa OnInit
+
+  @Input() librosPorDefecto: Book[] = [];
+  @Output() libroEliminado = new EventEmitter<number>();
+
   id_book: string = "";
-  librosPorDefecto: Book[] = [];
-  constructor(public cardBookService: CanalCardBookService, private booksService: BooksService) {
+  // librosPorDefecto: Book[] = [];
+
+  constructor(private booksService: BooksService) {
     this.librosPorDefecto = [];
-    this.loadBooks();
   }
+
+  ngOnInit() {
+    this.loadBooks();
+    this.booksService.getAll().subscribe((books: Book[]) => {
+    this.librosPorDefecto = books;
+  });
+  }
+
   private loadBooks() {
     let storedBooks = localStorage.getItem('librosPorDefecto');
     this.librosPorDefecto = storedBooks ? JSON.parse(storedBooks) : [];
   }
-  buscarLibro() {
-    if (this.id_book) {
-      const foundBook = this.booksService.getOne(this.id_book);
-      if (foundBook) {
-        this.librosPorDefecto = [foundBook];
-      } else {
-        alert('Libro no encontrado');
-      }
-    } else {
-      this.loadBooks();
-    }
-  }
-  ngOnInit(){
-    const storedBooks = localStorage.getItem('librosPorDefecto');
-    if(storedBooks) {
-      this.librosPorDefecto = JSON.parse(storedBooks);
-    }
-  }
-  eliminarLibro(index: number){
-    this.librosPorDefecto.splice(index, 1);
-    localStorage.setItem('librosPorDefecto', JSON.stringify(this.librosPorDefecto));
+
+  eliminarLibro(index: number): void {
+    this.libroEliminado.emit(index);
   }
 }

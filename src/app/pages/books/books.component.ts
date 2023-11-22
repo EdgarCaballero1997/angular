@@ -1,32 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/models/book';
-import { CanalCardBookService } from 'src/app/shared/canal-card-book.service';
+import { BooksService } from 'src/app/shared/books.service';
 
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
-export class BooksComponent {
-  id_book: string = "";
-  number_idBook: number = +this.id_book;
+export class BooksComponent implements OnInit {
+  id_book: string = '';
+  numBook: number = +this.id_book;
   id_user: string = "";
-  number_idUser: number = +this.id_user;
+  numPrecio: number = +this.id_book;;
   titulo: string = "";
   genero: string = "";
   autor: string = "";
   precio: string = "";
-  numberPrecio: number = +this.precio;
+  numUser: number = +this.precio;
   foto: string = "";
   librosPorDefecto: Book[] = [];
-  constructor(public cardBookService: CanalCardBookService) {
+  constructor(private booksService: BooksService) {
+  }
+  ngOnInit(){
+    this.booksService.getAll().subscribe((books: Book[]) => {
+      this.librosPorDefecto = books;
+    });
   }
   infoInputs() {
     const nuevoLibro = new Book(this.id_book, this.id_user, this.titulo, this.genero, this.autor, this.precio, this.foto);
-    const librosEnLocalStorage = localStorage.getItem('librosPorDefecto');
-    this.librosPorDefecto = librosEnLocalStorage ? JSON.parse(librosEnLocalStorage): [];
-    this.librosPorDefecto.push(nuevoLibro);
-    localStorage.setItem('librosPorDefecto', JSON.stringify(this.librosPorDefecto));
+    this.booksService.add(nuevoLibro);
     alert("¡Libro añadido!");
   }
   alert(){
@@ -34,5 +36,8 @@ export class BooksComponent {
   }
   borrarLocalStorage() {
     localStorage.removeItem('librosPorDefecto');
+  }
+  onLibroEliminado(index: number) {
+    this.booksService.deleteBook(index);
   }
 }

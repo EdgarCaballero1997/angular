@@ -1,26 +1,36 @@
-<div class="contenedor-general">
-    <div class="cont-formulario">
-        <div class="cont-titulo">
-            <h1>Modificador de libros</h1>
+<div class="contenedor-general">    
+    <div class="contenedor container-form">
+        <h2 class="form-title">Modifica un libro</h2>
+        <form>
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Título del libro</label>
+            <input type="text" class="form-control" id="titulo" placeholder="Ingrese el título" required>
         </div>
-        <form action="" method="" class="formulario">
-            <label>Titulo del libro</label><br>
-            <input type="text" class="input form-control" name="titulo" placeholder="Introduce el título:"><br>
-            <label>Género del libro:</label><br>
-            <input type="text" class="input form-control" name="genero" placeholder="Introduce el género:"><br>
-            <label>Autor del libro:</label><br>
-            <input type="text" class="input form-control" name="autor" placeholder="Introduce el/la autor/a:"><br>
-            <label>Precio del libro:</label><br>
-            <input type="text" class="input form-control" name="precio" placeholder="Introduce el precio del libro:"><br>
-            <label>Portada del libro</label><br>
-            <input type="text" class="input form-control" name="portada" placeholder="Click aquí para seleccionar una ruta"><br>
-            <label>ID del libro:</label><br>
-            <input type="text" class="input form-control" name="id-libro" placeholder="Introduce el ID del libro:"><br>
-            <label>ID del usuario:</label><br>
-            <input type="text" class="input form-control" name="id-user" placeholder="Introduce el ID de usuario:"><br>
+        <div class="mb-3">
+            <label for="genero" class="form-label">Género del libro</label>
+            <input type="text" class="form-control" id="genero" placeholder="Ingrese el género" required>
+        </div>
+        <div class="mb-3">
+            <label for="autor" class="form-label">Autor del libro</label>
+            <input type="text" class="form-control" id="autor" placeholder="Ingrese el autor" required>
+        </div>
+        <div class="mb-3">
+            <label for="precio" class="form-label">Precio del libro</label>
+            <input type="number" class="form-control" id="precio" placeholder="Ingrese el precio" required>
+        </div>
+        <div class="mb-3">
+            <label for="portada" class="form-label">Portada del libro</label>
+            <input type="text" class="form-control" id="portada" placeholder="Ingrese la URL de la portada" required>
+        </div>
+        <div class="mb-3">
+            <label for="idLibro" class="form-label">ID del libro</label>
+            <input type="number" class="form-control" id="idLibro" placeholder="Ingrese el ID del libro" required>
+        </div>
+        <div class="mb-3">
+            <label for="idUsuario" class="form-label">ID del usuario</label>
+            <input type="number" class="form-control" id="idUsuario" placeholder="Ingrese el ID del usuario" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Modificar libro</button>
         </form>
-        <div class="cont-boton">
-            <button class="boton btn btn-primary" (click)="modificarLibro()">Modificar libro</button>
-        </div>
     </div>
 </div>
