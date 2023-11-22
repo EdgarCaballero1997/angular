@@ -1,9 +1,9 @@
 <div class="container-general-card">
     <div class="cont-around cont-search">
-        <form class="d-flex mb-3">
+        <!-- <form class="d-flex mb-3" (ngSubmit)="buscarLibro()">
             <input type="text" class="form-control mr-2" id="searchInput" placeholder="Ingrese el nombre del libro" [(ngModel)]="id_book">
-            <button class="btn btn-primary" (click)="buscarLibro()">Buscar</button>
-        </form>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+          </form> -->
         <ng-container *ngIf="librosPorDefecto && librosPorDefecto.length > 0; else mostrarMensaje">
             <div class="cont-cards">
                 <div *ngFor="let librosAtributos of librosPorDefecto; let even = even, let i = index" class="card-1" [ngClass]="{'par': even, 'impar': !even}" type="submit">

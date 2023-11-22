@@ -15,8 +15,8 @@ import { BooksComponent } from './pages/books/books.component';
 import { ReferenciaPipe } from './pipe/referencia.pipe';
 import { MonedaPipe } from './pipe/moneda.pipe';
 import { CardComponent } from './pages/card/card.component';
-import { UpdateBookComponent } from './pages/update-book/update-book.component';
 import { BooksService } from './shared/books.service';
+import { UpdateBookComponent } from './pages/update-book/update-book.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { BooksService } from './shared/books.service';
     ReferenciaPipe,
     MonedaPipe,
     CardComponent,
-    UpdateBookComponent,
+    UpdateBookComponent
   ],
   imports: [
     BrowserModule,
