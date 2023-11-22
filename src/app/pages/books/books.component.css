@@ -4,14 +4,6 @@ h1{
 }
 .contenedor-general{
     width: 100vw;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    height: auto;
-    border: 2px solid black;
-=======
->>>>>>> dia5
-    padding: 100px;
-=======
     height: 100vw;
     background-image: url(../../../assets/img/-methode-times-prod-web-bin-02fedb4c-9c05-11ed-8201-2ed91f44d1e8.jpg);
     display: flex;
@@ -24,93 +16,13 @@ h1{
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.8);
->>>>>>> dia5
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /* .cont-around{
-        width: 90%;
-        height: auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-    } */
-        /* .card-1{
-            width: 18rem;
-            height: 37%;
-            background-color: rgba(255, 255, 255, 0.55);
-            padding: 10px;
-            margin: 10px;
-            border-radius: 7px;
-            display: flex;
-            flex-direction: column;
-        } */
-            /* .card-1.par:hover{
-                width: 18rem;
-                height: 37%;
-                box-shadow: 0 4px 8px rgba(243, 10, 255, 0.774);
-                padding: 10px;
-                margin: 10px;
-                border-radius: 7px;
-                display: flex;
-                flex-direction: column;
-            }
-            .card-1.impar:hover{
-                width: 18rem;
-                height: 37%;
-                box-shadow: 0 4px 8px rgba(10, 255, 251, 0.774);
-                padding: 10px;
-                margin: 10px;
-                border-radius: 7px;
-                display: flex;
-                flex-direction: column;
-            } */
-                /* .contenedor-img{
-                    width: 100%;
-                    height: 70%;
-                    display: flex;
-                    overflow: hidden;
-                    background-size: cover;
-                    background-position: center;
-                }
-                    .image-card{
-                        width: 100%;
-                        height: 100%;
-                    }
-                .card-body{
-                    margin: 5px;
-                    display: flex;
-                    flex-direction: column;
-                }
-                    .opacity-letter{
-                        opacity: 1;
-                    }
-        .cont-mensaje{
-            display: flex;
-            justify-content: center;
-        }
-            .mensaje{
-                color: white;
-                font-size: xx-large;
-            } */
-=======
->>>>>>> dia5
-    .container{
-        width: 60%;
-        height: 60%;
-        border-radius: 10px;
-        background-color: rgba(255, 255, 255, 0.4);
-        padding: 50px;
-        margin: 20px;
-=======
     .cont-titulo{
         width: 90%;
->>>>>>> dia5
         display: flex;
         justify-content: center;
         margin: 20px;
