@@ -42,4 +42,11 @@ export class CardComponent implements OnInit {  // Implementa OnInit
     console.log('Buscar libro:', this.filtroId);
     this.communicationService.setFiltroId(this.filtroId);
   }
+
+  alert(){
+    setTimeout(() => {
+      alert('Has eliminado el libro')
+    }, 100);
+  }
+
 }

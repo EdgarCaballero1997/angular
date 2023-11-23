@@ -1,0 +1,28 @@
+<div class="form-container">
+  <h2>Login</h2>
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <div class="mb-3">
+      <label for="email" class="form-label">Correo Electrónico:</label>
+      <input type="email" id="email" name="email" class="form-control" required email [(ngModel)]="user.email" />
+      <div *ngIf="loginForm.controls['email']?.hasError('required') && loginForm.controls['email']?.touched">
+        <p class="error-message">Correo electrónico es obligatorio.</p>
+      </div>
+      <div *ngIf="loginForm.controls['email']?.hasError('email') && loginForm.controls['email']?.touched">
+        <p class="error-message">Correo electrónico no válido.</p>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Contraseña:</label>
+      <input type="password" id="password" name="password" class="form-control" required minlength="6" [(ngModel)]="user.password" />
+      <div *ngIf="loginForm.controls['password']?.hasError('required') && loginForm.controls['password']?.touched">
+        <p class="error-message">La contraseña es obligatoria.</p>
+      </div>
+      <div *ngIf="loginForm.controls['password']?.hasError('minlength') && loginForm.controls['password']?.touched">
+        <p class="error-message">La contraseña debe tener al menos 6 caracteres.</p>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Iniciar Sesión</button>
+  </form>
+</div>

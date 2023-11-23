@@ -7,7 +7,7 @@
           <ng-container *ngIf="librosPorDefecto && librosPorDefecto.length > 0; else mostrarMensaje">
             <div class="cont-cards">
                 <div *ngFor="let librosAtributos of librosPorDefecto; let even = even, let i = index" class="card-1" [ngClass]="{'par': even, 'impar': !even}" type="submit">
-                    <button class="boton-x btn btn-white" (click)="eliminarLibro(i)">X</button>
+                    <button class="boton-x btn btn-white" (click)="eliminarLibro(i); alert()">X</button>
                     <div class="contenedor-img">
                         <img src="{{librosAtributos.photo}}" class="image-card" alt="book">
                     </div>

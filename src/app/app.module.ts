@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,8 @@ import { CardComponent } from './pages/card/card.component';
 import { BooksService } from './shared/books.service';
 import { UpdateBookComponent } from './pages/update-book/update-book.component';
 import { CommunicationService } from './shared/communication.service';
+import { LoginComponent } from './pages/login/login.component';
+import { FormLoginComponent } from './components/form-login/form-login.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +35,15 @@ import { CommunicationService } from './shared/communication.service';
     ReferenciaPipe,
     MonedaPipe,
     CardComponent,
-    UpdateBookComponent
+    UpdateBookComponent,
+    LoginComponent,
+    FormLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     BooksService,

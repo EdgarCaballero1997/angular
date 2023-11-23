@@ -21,6 +21,7 @@ export class BooksComponent implements OnInit {
   foto: string = "";
   librosPorDefecto: Book[] = [];
   coincidenciaEncontrada: boolean = false;
+  isAddButtonDisabled: boolean = true;
 
   constructor(private booksService: BooksService, private communicationService: CommunicationService) {
 
@@ -79,10 +80,6 @@ export class BooksComponent implements OnInit {
 
   alert(){
     alert("Copia y pega una de estas rutas:\n../../../assets/img/pasionIndia.jpg\n../../../assets/img/juanramonrallo.jpeg\n../../../assets/img/kenfollet.jpg\n");
-  }
-
-  borrarLocalStorage() {
-    localStorage.removeItem('librosPorDefecto');
   }
 
   onLibroEliminado(index: number) {
