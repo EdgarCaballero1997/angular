@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,13 +11,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { FormRegisterComponent } from './components/form-register/form-register.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { FormsModule } from '@angular/forms';
 import { BooksComponent } from './pages/books/books.component';
 import { ReferenciaPipe } from './pipe/referencia.pipe';
 import { MonedaPipe } from './pipe/moneda.pipe';
 import { CardComponent } from './pages/card/card.component';
 import { BooksService } from './shared/books.service';
 import { UpdateBookComponent } from './pages/update-book/update-book.component';
+import { CommunicationService } from './shared/communication.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,10 @@ import { UpdateBookComponent } from './pages/update-book/update-book.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [BooksService],
+  providers: [
+    BooksService,
+    CommunicationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

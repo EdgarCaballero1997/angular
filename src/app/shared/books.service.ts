@@ -31,13 +31,13 @@ export class BooksService {
   edit(book: Book): boolean {
     const currentBooks = this.librosPorDefecto.value;
     const index = currentBooks.findIndex(b => b.id_book === book.id_book);
-
+  
     if (index !== -1) {
       currentBooks[index] = book;
       this.librosPorDefecto.next([...currentBooks]);
       return true;
     }
-
+  
     return false;
   }
 
