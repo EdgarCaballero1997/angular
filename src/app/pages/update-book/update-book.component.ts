@@ -33,40 +33,4 @@ export class UpdateBookComponent {
   private actualizarListaLibros(){
     this.librosPorDefecto = this.booksService.getAll();
   }
-
-  // actualizarLibro() {
-  //   // Obtén el libro actual para preservar los datos no modificados
-  //   this.booksService.getOne(this.libro.id_book).subscribe(
-  //     (libroActual: Book | undefined) => {
-  //       if (libroActual) {
-  //         // Actualiza solo las propiedades modificadas
-  //         const libroActualizado = new Book(
-  //           this.libro.id_book,
-  //           this.libro.id_user || libroActual.id_user,
-  //           this.libro.title || libroActual.title,
-  //           this.libro.type || libroActual.type,
-  //           this.libro.author || libroActual.author,
-  //           this.libro.price || libroActual.price,
-  //           this.libro.photo || libroActual.photo
-  //         );
-
-  //         this.booksService.edit(libroActualizado).subscribe(
-  //           () => {
-  //             alert("¡Libro actualizado!");
-  //           },
-  //           error => {
-  //             console.error('Error al actualizar el libro:', error);
-  //             alert("No se pudo actualizar el libro. Verifica el ID del libro.");
-  //           }
-  //         );
-  //       } else {
-  //         alert("Libro no encontrado. Verifica el ID del libro.");
-  //       }
-  //     },
-  //     error => {
-  //       console.error('Error al obtener el libro:', error);
-  //       alert("No se pudo obtener el libro. Verifica el ID del libro.");
-  //     }
-  //   );
-  // }
 }

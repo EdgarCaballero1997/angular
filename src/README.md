@@ -1,5 +1,5 @@
-NOTA PARA EL PROFESOR: Durante todo el desarrollo de mi aplicación me he encontrado con distintos problemas que no he podido solucionar.
+NOTA PARA EL PROFESOR: Durante todo el desarrollo de mi aplicación me he encontrado con un problema que no he podido solucionar.
 
-1. He encontrado la forma de crear cards con la información de libros, sin embargo no encuntro la forma de modificarlos. Lo he intentado todo, incluso ChatGPT. Funciona todo lo demas: puedo crear libros y puedo eliminarlos, pero no puedo modificarlos.
+1. No funciona la barra de busqueda. No he encontrado la forma de implementar la funcionalidad.
 
-2. No funciona la barra de busqueda. No he encontrado la forma de implementar la funcionalidad. He dejado en el código los intentos pero no son funcionales, obviamente.
+NO TENÉIS NI IDEA DE LA QUE HE LIADO CON EL GIT!! Nunca he sentido tantas agujetas de estar sentado.

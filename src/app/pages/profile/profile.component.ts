@@ -20,5 +20,3 @@ export class ProfileComponent {
     console.log(this.nameInput);
   }
 }
-
-//LO SIENTO MUCHO, NO ENCUENTRO LA FORMA DE RESOLVER EL EJERCICIO SIN USAR LA DIRECTIVA "ngFor"
