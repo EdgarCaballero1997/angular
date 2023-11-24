@@ -8,29 +8,29 @@
         </div>
         <div class="mb-3">
             <label for="genero" class="form-label">Género del libro</label>
-            <input type="text" class="form-control" id="genero" [(ngModel)]="libro.type" placeholder="Ingrese el género" required>
+            <input type="text" class="form-control" name="type" id="genero" [(ngModel)]="libro.type" placeholder="Ingrese el género" required>
         </div>
         <div class="mb-3">
             <label for="autor" class="form-label">Autor del libro</label>
-            <input type="text" class="form-control" id="autor" [(ngModel)]="libro.author" placeholder="Ingrese el autor" required>
+            <input type="text" class="form-control" name="author" id="autor" [(ngModel)]="libro.author" placeholder="Ingrese el autor" required>
         </div>
         <div class="mb-3">
             <label for="precio" class="form-label">Precio del libro</label>
-            <input type="number" class="form-control" id="precio" [(ngModel)]="libro.price" placeholder="Ingrese el precio" required>
+            <input type="number" class="form-control" name="price" id="precio" [(ngModel)]="libro.price" placeholder="Ingrese el precio" required>
         </div>
         <div class="mb-3">
             <label for="portada" class="form-label">Portada del libro</label>
-            <input type="text" class="form-control" id="portada" [(ngModel)]="libro.photo" placeholder="Ingrese la URL de la portada" required>
+            <input type="text" class="form-control" name="photo" id="portada" [(ngModel)]="libro.photo" placeholder="Ingrese la URL de la portada" required>
         </div>
         <div class="mb-3">
             <label for="idLibro" class="form-label">ID del libro</label>
-            <input type="text" class="form-control" id="idLibro" [(ngModel)]="libro.id_book" placeholder="Ingrese el ID del libro" required>
+            <input type="text" class="form-control" name="id_book" id="idLibro" [(ngModel)]="libro.id_book" placeholder="Ingrese el ID del libro" required>
         </div>
         <div class="mb-3">
             <label for="idUsuario" class="form-label">ID del usuario</label>
-            <input type="number" class="form-control" id="idUsuario" [(ngModel)]="libro.id_user" placeholder="Ingrese el ID del usuario" required>
+            <input type="number" class="form-control" name="id_user" id="idUsuario" [(ngModel)]="libro.id_user" placeholder="Ingrese el ID del usuario" required>
         </div>
-        <button type="submit" class="btn btn-primary" (click)="actualizarLibro()">Modificar libro</button>
+        <button type="submit" class="btn btn-primary" (click)="editarLibro(libro)">Modificar libro</button>
         </form>
     </div>
 </div>

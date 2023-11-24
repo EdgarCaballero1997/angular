@@ -6,6 +6,7 @@ h5{
 }
 .container-general-card{
     width: 100vw;
+    min-height: 100vw;
     height: auto;
     background-image: url(../../../assets/img/faro-aventura.jpg);
     display: flex;
@@ -16,6 +17,7 @@ h5{
         width: 90%;
         height: auto;
         padding: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
         display: flex;
         flex-wrap: wrap;
         justify-content: center;

@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Book } from 'src/models/book';
 import { BooksService } from 'src/app/shared/books.service';
-import { CommunicationService } from 'src/app/shared/communication.service';
 
 @Component({
   selector: 'app-card',
@@ -9,38 +8,31 @@ import { CommunicationService } from 'src/app/shared/communication.service';
   styleUrls: ['./card.component.css']
 })
 
-export class CardComponent implements OnInit {  // Implementa OnInit
+export class CardComponent implements OnInit {
 
-  @Input() librosPorDefecto: Book[] = [];
-  @Output() libroEliminado = new EventEmitter<number>();
+  librosPorDefecto: Book[] = [];
+  id_book: number;
+  libroEscogido: Book | undefined;
 
-  id_book: string = "";
-  // librosPorDefecto: Book[] = [];
-  filtroId: string = ""; //AQUÍ
+  constructor(private booksService: BooksService) {
 
-  constructor(private booksService: BooksService, private communicationService: CommunicationService) {
-    this.librosPorDefecto = [];
   }
 
   ngOnInit() {
-    this.loadBooks();
-    this.booksService.getAll().subscribe((books: Book[]) => {
-      this.librosPorDefecto = books;
-    });
+    this.librosPorDefecto = this.booksService.getAll();
   }
 
-  private loadBooks() {
-    let storedBooks = localStorage.getItem('librosPorDefecto');
-    this.librosPorDefecto = storedBooks ? JSON.parse(storedBooks) : [];
+  buscarLibro(): void {
+    this.libroEscogido = this.booksService.getOne(this.id_book);
   }
 
   eliminarLibro(index: number): void {
-    this.booksService.delete(this.librosPorDefecto[index].id_book);
+      let deleteBook = this.librosPorDefecto[index].id_book;
+      this.booksService.delete(deleteBook);
   }
 
-  buscarLibro() {
-    console.log('Buscar libro:', this.filtroId);
-    this.communicationService.setFiltroId(this.filtroId);
+  resetBuscarLibro(): void {
+    this.libroEscogido = undefined;
   }
 
   alert(){
@@ -48,5 +40,4 @@ export class CardComponent implements OnInit {  // Implementa OnInit
       alert('Has eliminado el libro')
     }, 100);
   }
-
 }

@@ -17,9 +17,9 @@ import { MonedaPipe } from './pipe/moneda.pipe';
 import { CardComponent } from './pages/card/card.component';
 import { BooksService } from './shared/books.service';
 import { UpdateBookComponent } from './pages/update-book/update-book.component';
-import { CommunicationService } from './shared/communication.service';
 import { LoginComponent } from './pages/login/login.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,11 +43,11 @@ import { FormLoginComponent } from './components/form-login/form-login.component
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     BooksService,
-    CommunicationService
   ],
   bootstrap: [AppComponent]
 })
