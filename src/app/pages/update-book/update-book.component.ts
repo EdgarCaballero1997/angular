@@ -16,14 +16,37 @@ export class UpdateBookComponent {
 
   }
 
-  editarLibro(libro: Book): void {
-    const exito = this.booksService.edit(libro);
+  // editarLibro(libro: Book): void {
+  //   const exito = this.booksService.editLocal(libro);
+  //   if(exito){
+  //     this.procesarOperacion();
+  //     alert('La edición ha sido satisfactoria illo')
+  //   }else{
+  //     console.error('illo hay algo que no has puesto bien date un voltio y vuelvelo a intentar');
+  //   }
+  // }
+
+  editarLibroLocal(libro: Book): void {
+    const exito = this.booksService.editLocal(libro);
     if(exito){
       this.procesarOperacion();
-      alert('La edición ha sido satisfactoria illo')
+      alert('Éxito!')
     }else{
-      console.error('illo hay algo que no has puesto bien sale un voltio y vuelvelo a intentar pisha');
+      console.error('Error!');
     }
+  }
+  editarLibroRemoto(libro: Book): void {
+    this.booksService.edit(libro).subscribe(
+      (data: Book) => {
+        this.procesarOperacion();
+        console.log('Datos recibido: ', data);
+        alert('Èxito en la modificación!')
+      },
+      (error: any) => {
+        console.error('Error al obtener datos: ', error);
+        alert('Error en la modificación!')
+      }
+    )
   }
 
   private procesarOperacion(){
@@ -31,6 +54,6 @@ export class UpdateBookComponent {
   }
 
   private actualizarListaLibros(){
-    this.librosPorDefecto = this.booksService.getAll();
+    this.librosPorDefecto = this.booksService.getAllLocal();
   }
 }

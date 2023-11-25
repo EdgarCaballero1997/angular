@@ -29,7 +29,7 @@ export class BooksComponent implements OnInit {
 
   infoInputs() {
     let nuevoLibro = new Book(this.id_book, this.id_user, this.titulo, this.genero, this.autor, this.precio, this.foto);
-    this.booksService.add(nuevoLibro);
+    this.booksService.addLocal(nuevoLibro);
     alert("¡Libro añadido!");
   }
 

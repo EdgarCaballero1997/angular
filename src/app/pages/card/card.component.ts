@@ -19,16 +19,16 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.librosPorDefecto = this.booksService.getAll();
+    this.librosPorDefecto = this.booksService.getAllLocal();
   }
 
   buscarLibro(): void {
-    this.libroEscogido = this.booksService.getOne(this.id_book);
+    this.libroEscogido = this.booksService.getOneLocal(this.id_book);
   }
 
   eliminarLibro(index: number): void {
       let deleteBook = this.librosPorDefecto[index].id_book;
-      this.booksService.delete(deleteBook);
+      this.booksService.deleteLocal(deleteBook);
   }
 
   resetBuscarLibro(): void {
