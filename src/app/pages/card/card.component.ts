@@ -22,13 +22,43 @@ export class CardComponent implements OnInit {
     this.librosPorDefecto = this.booksService.getAllLocal();
   }
 
-  buscarLibro(): void {
+  // buscarLibro(): void {
+  //   this.libroEscogido = this.booksService.getOneLocal(this.id_book);
+  // }
+  buscarLibroLocal(): void {
     this.libroEscogido = this.booksService.getOneLocal(this.id_book);
   }
+  buscarLibroRemoto(): void {
+    this.booksService.getOne(this.id_book).subscribe(
+      (data: Book) => {
+        this.libroEscogido = data;
+        console.log('Libro buscado: ', data);
+      },
+      (error: Book) => {
+        console.error(error);
+      }
+    );
+  }
 
-  eliminarLibro(index: number): void {
+
+//   eliminarLibro(index: number): void {
+//     let deleteBook = this.librosPorDefecto[index].id_book;
+//     this.booksService.deleteLocal(deleteBook);
+// }
+  eliminarLibroLocal(index: number): void {
       let deleteBook = this.librosPorDefecto[index].id_book;
       this.booksService.deleteLocal(deleteBook);
+  }
+  eliminarLibroRemoto(index: number): void {
+    let deleteBook = this.librosPorDefecto[index].id_book;
+    this.booksService.delete(deleteBook).subscribe(
+      (data: Book) => {
+        console.log(data);
+      },
+      (error: any) => {
+        console.error(error);
+      }
+    );
   }
 
   resetBuscarLibro(): void {

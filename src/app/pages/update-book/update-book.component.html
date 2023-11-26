@@ -30,7 +30,7 @@
             <label for="idUsuario" class="form-label">ID del usuario</label>
             <input type="number" class="form-control" name="id_user" id="idUsuario" [(ngModel)]="libro.id_user" placeholder="Ingrese el ID del usuario" required>
         </div>
-        <button type="submit" class="btn btn-primary" (click)="editarLibroLocal(libro)">Modificar libro</button>
+        <button type="submit" class="btn btn-primary" (click)="editarLibroLocal(libro); editarLibroRemoto(libro)">Modificar libro</button>
         </form>
     </div>
 </div>

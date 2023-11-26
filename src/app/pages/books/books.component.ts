@@ -27,10 +27,27 @@ export class BooksComponent implements OnInit {
     
   }
 
-  infoInputs() {
+  // infoInputs() {
+  //   let nuevoLibro = new Book(this.id_book, this.id_user, this.titulo, this.genero, this.autor, this.precio, this.foto);
+  //   this.booksService.addLocal(nuevoLibro);
+  //   alert("¡Libro añadido!");
+  // }
+  infoInputsLocal() {
     let nuevoLibro = new Book(this.id_book, this.id_user, this.titulo, this.genero, this.autor, this.precio, this.foto);
     this.booksService.addLocal(nuevoLibro);
     alert("¡Libro añadido!");
+  }
+  infoInputsRemoto() {
+    let nuevoLibro = new Book(this.id_book, this.id_user, this.titulo, this.genero, this.autor, this.precio, this.foto);
+    this.booksService.add(nuevoLibro).subscribe(
+      (data: Book) => {
+        console.log('Información del nuevo libro: ', data);
+        
+      },
+      (error: Book) => {
+        console.error(error);
+      }
+    );
   }
 
   alert(){

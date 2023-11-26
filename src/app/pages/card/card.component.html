@@ -11,7 +11,7 @@
         </div>
       </ng-container>
   
-      <form class="d-flex mb-3" (submit)="buscarLibro(); resetBuscarLibro()">
+      <form class="d-flex mb-3" (submit)="buscarLibroLocal(); buscarLibroRemoto(); resetBuscarLibro()">
         <input type="text" [(ngModel)]="id_book" name="id_book" class="form-control mr-2" id="searchInput" placeholder="Ingrese el nombre del libro">
         <button type="submit" class="btn btn-primary">Buscar</button>
       </form>
@@ -19,7 +19,7 @@
       <ng-container *ngIf="!libroEscogido && librosPorDefecto && librosPorDefecto.length > 0; else mostrarMensaje">
         <div class="cont-cards">
           <div *ngFor="let librosAtributos of librosPorDefecto; let even = even, let i = index" class="card-1" [ngClass]="{'par': even, 'impar': !even}">
-            <button class="boton-x btn btn-white" (click)="alert(); eliminarLibro(i)">X</button>
+            <button class="boton-x btn btn-white" (click)="alert(); eliminarLibroLocal(i); eliminarLibroRemoto(i)">X</button>
             <div class="contenedor-img">
               <img src="{{librosAtributos.photo}}" class="image-card" alt="book">
             </div>

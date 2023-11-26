@@ -40,20 +40,35 @@ export class UpdateBookComponent {
       (data: Book) => {
         this.procesarOperacion();
         console.log('Datos recibido: ', data);
-        alert('Èxito en la modificación!')
       },
       (error: any) => {
         console.error('Error al obtener datos: ', error);
-        alert('Error en la modificación!')
       }
-    )
+    );
   }
 
   private procesarOperacion(){
-    this.actualizarListaLibros();
+    this.actualizarListaLibrosLocal();
+    this.actualizarListaLibrosRemoto();
   }
 
-  private actualizarListaLibros(){
+  // private actualizarListaLibrosLocal(){
+  //   this.librosPorDefecto = this.booksService.getAllLocal()
+  // }
+  private actualizarListaLibrosLocal(){
     this.librosPorDefecto = this.booksService.getAllLocal();
+  }
+  private actualizarListaLibrosRemoto(){
+    this.booksService.getAll().subscribe(
+      (data: Book[]) => {
+        this.librosPorDefecto = data;
+        console.log('Datos actualizados: ', data);
+        alert('Lista de libros actualizada!');
+      },
+      (error: any) => {
+        console.error(error);
+        alert('Error al actualizar la lista de libros!');
+      }
+    );
   }
 }

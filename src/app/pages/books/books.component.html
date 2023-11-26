@@ -20,7 +20,7 @@
             <input type="text" class="input form-control" name="id-user" placeholder="Introduce el ID de usuario:" [(ngModel)]="id_user"><br>
         </form>
         <div class="cont-boton">
-            <button class="btn btn-primary" (click)="infoInputs()">Añadir libro</button>
+            <button class="btn btn-primary" (click)="infoInputsLocal(); infoInputsRemoto()">Añadir libro</button>
         </div>
     </div>
 </div>
